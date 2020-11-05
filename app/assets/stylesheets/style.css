@@ -20,27 +20,55 @@ body {
   color: #3b4043;
 }
 
+.main{
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.select-reason-contents{
+  display: flex;
+}
+
+.title{
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: space-around; */
+  text-align: center;
+  margin-bottom: 10px;
+  
+
+
+}
+
+
+.list-pict{
+  display: flex;
+}
 li {
   list-style: none;
 }
 
 img {
+  width: 100vw;
+  height: 300px;
   max-width: 100%;
   vertical-align: bottom;
+  margin-bottom: 20px;
 }
 
 a {
   text-decoration: none;
-  color: #e9eff3;
+  color: #1c241b;
 }
 
 /* ヘッダー */
 
 .header {
   background-color: #7beb97;
-  margin-bottom: 48px;
+  margin-bottom: 10px;
   padding: 10px 0;
-justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
 }
 .inner {
@@ -152,11 +180,14 @@ justify-content: space-between;
 .card__title {
   display: block;
   font-size: 20px;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
   font-weight: bold;
+  border:1px solid #999;
+  background: #fafafa;
 }
 .card__summary {
   font-size: 16px;
+  border:1px solid #999;
 }
 .card__user {
   display: block;
@@ -167,27 +198,27 @@ justify-content: space-between;
 }
 
 /* 詳細ページ */
-.prototype__wrapper{
+.idea__wrapper{
   min-height: calc(100vh - 161px);
 }
-.prototype__hedding{
+.idea__hedding{
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
-.prototype__user{
+.idea__user{
   display: block;
   font-size: 16px;
   color: #999;
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image{
+.idea__image{
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.prototype__detail{
+.idea__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -197,12 +228,12 @@ justify-content: space-between;
   font-size: 20px;
   font-weight: bold;
 }
-.prototype__manage{
+.idea__manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.prototype__btn{
+.idea__btn{
   display: block;
   padding: 0.4em 1.6em;
   font-size: 0.4em;
@@ -214,12 +245,12 @@ justify-content: space-between;
   transition: 0.4s ease;
   margin: 0 4px;
 }
-.prototype__btn:hover{
+.idea__btn:hover{
   color: #fff;
   background: #999;
 }
 
-.prototype__comments{
+.idea__comments{
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
@@ -296,7 +327,7 @@ justify-content: space-between;
     width: 48%;
     margin-bottom: 40px;
   }
-  .prototype_image{
+  .idea_image{
     width: 60%;
   }
 }
@@ -319,7 +350,7 @@ justify-content: space-between;
   .card__summary {
     font-size: 14px;
   }
-  .prototype_image{
+  .idea_image{
     width: 100%;
   }
   .table{

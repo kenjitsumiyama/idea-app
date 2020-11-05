@@ -1,6 +1,39 @@
 <main class="main">
-  <div class="inner">
+<div class='main'>
+    <h2 class='title'>
+      あなたのアイデアを投稿しよう
+    </h2>
+  
+    <div class='img'>
+      <%= link_to image_tag("idea1.jpeg", class:"img"), "#" %>
+      <%# <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %> 
+    </div>
 
+    
+  <div class="inner">
+   
+   <div class='select-reason-contents'>
+    <h2 class='title'>
+      アイデアはあるけど個人の力で実現するのは難しい...
+       <p>
+      <%= link_to "アイデアを投稿しよう！", root_path ,method: :get ,class: :greeting__link %>
+      </p>
+    </h2>
+     <%= image_tag "image2.jpeg", class:"list-pict" %>
+   </div>
+
+   <div class='select-reason-contents'>
+    <h2 class='title'>
+      実現する力はあるけどアイデアが思い浮かばない...
+      <p>
+      <%= link_to "アイデアにコメントしよう！", root_path ,method: :get ,class: :greeting__link %>
+      </p>
+    </h2>
+     <%= image_tag "image3.jpeg", class:"list-pict" %>
+   </div>
+
+  
+   
    <% if user_signed_in?  %>
     <%# ログインしているときは以下を表示する %>
       <%# <div class="greeting"> %>
@@ -13,12 +46,24 @@
       <%# </div> %>
       <%="さん"%>
       </div> 
-
+ <%# <div class='title-contents'>
+    <h2 class='service-title'>
+      アイデアはあるけど個人の力で実現するのは難しい...という人と、
+「実現する力はあるけどアイデアが思い浮かばない...という人あなた！！
+    </h2>
+    <div class='store-btn'>
+      <%= link_to image_tag("idea1.jpeg", class:"apple-btn"), "#" %>
+      <%# <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %> 
+    <%# </div> %> 
     <%# // ログインしているときは上記を表示する %>
 <% end %>
-    <div class="card__wrapper">
+<h2 class='title'>　
+      投稿一覧
+    </h2>
+
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %  <%= render partial: 'prototype', collection: @prototypes %>
-       <%# <%= render partial: "idea", collection: @idea %> %>
+       <%= render partial: "idea", collection: @ideas %>
+       
     </div>
   </div>
 </main>

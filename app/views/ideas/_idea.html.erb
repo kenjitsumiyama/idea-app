@@ -1,0 +1,13 @@
+<div class="card">
+   <%# <%= link_to idea.titletag(idea.image, class: :card__image),idea_path(idea.id), method: :get%> 
+  <div class="card__body">
+    <%= link_to idea.title, idea_path(idea.id), method: :get, class: :card__title%>
+    <p class="card__summary">
+      <%= "#{idea.content}" %> 
+    </p>
+    <%= link_to "#{idea.user.name}", user_path(idea.user.id), method: :get, class: :card__user %>
+  </div>                                  
+</div>
+
+
+
