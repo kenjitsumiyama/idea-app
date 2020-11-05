@@ -20,6 +20,21 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
   end
 
+  def edit
+    @idea = Idea.find(params[:id])
+  end
+
+  def update
+     idea = Idea.find(params[:id])
+     idea.update(idea_params)
+     
+     if idea.update(idea_params)
+      redirect_to idea_path(idea.id), method: :get 
+    else
+      render :edit
+    end
+  end
+
   private
 
   def idea_params
