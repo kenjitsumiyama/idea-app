@@ -18,6 +18,10 @@ class IdeasController < ApplicationController
 
   def show
     @idea = Idea.find(params[:id])
+    @comment = Comment.new
+  #  @comments = @idea.comments,includes(:user)
+    @comments = @idea.comments.includes(:user).order(id: 'DESC')
+    # @comments = Comment.all.order(id: 'DESC')
   end
 
   def edit
@@ -29,6 +33,7 @@ class IdeasController < ApplicationController
      idea.update(idea_params)
      
      if idea.update(idea_params)
+      flash[:notice] = "編集が完了しました"
       redirect_to idea_path(idea.id), method: :get 
     else
       render :edit

@@ -1,6 +1,13 @@
 <main class="main">
+
+　 <%= render partial: 'layouts/flash' %>
   <div class="inner">
+ 
     <div class="idea__wrapper">
+     
+     <div class="notifications">
+ 
+</div>
       <p class="idea__hedding">
         <%= @idea.title %>
       </p>
@@ -32,8 +39,40 @@
         </div>
       <%# </div> %>
       <div class="idea__comments">
-        ログインしているユーザーには以下のコメント投稿フォームを表示する
-       
+    
+     <%# <% if current_user %> 
+     <% if user_signed_in? %>
+       <%= form_with(model:[@idea,@comment], local: true) do |f| %>
+         <div class="field">
+            <%= f.label :text, "コメント" %><br />
+            <%= f.text_field :text %>
+          </div>
+          <div class="actions">
+            <%= f.submit "送信する", class: :form__btn  %>
+           </div>
+           <% end %> 
+           <% else %>
+         <strong><p class ="title"> 新規登録,ログインしてコメントしよう！</p></strong> 
+     <% end %> 
+     <ul class="comments_lists"> 
+     <h2 class="title">コメント一覧</h2>
+      <% if @comments %>
+       <% @comments.each do |comment| %>
+      <li class="comments_list">
+       <p>
+          <%= comment.text %>
+        </p>  
+          <p class="created__at"> 
+           <%=  comment.created_at.strftime("%m月%d日 %H時%M分") %> 
+           <% if current_user.id  == comment.user_id  %>
+            <%= link_to "コメント削除する",idea_comment_path(@idea.id,comment.id), method: :delete, class: :idea__btn %>
+            <%end%>
+          <%= link_to "#{comment.user.name}", "/users/#{comment.user_id}", class: :comment_user  %> 
+          </p>
+         <% end %>
+          <% end %>
+         </li>
+        </ul>
       </div>
     </div>
   </div>

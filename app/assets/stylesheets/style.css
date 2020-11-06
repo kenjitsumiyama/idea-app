@@ -40,7 +40,18 @@ body {
   
 }
 
-
+.notice
+{
+  margin: 0 132px 20px;
+  font-size: 10px;
+  /* background-color: aqua; */
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
 .list-pict{
   display: flex;
 }
@@ -147,8 +158,8 @@ a {
   color: #fff;
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
-  border: 1px #87CEFA solid;
+  background: #7beb97;
+  border: 1px#7beb97 solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -189,6 +200,13 @@ a {
   border: solid 2px; 
   
 }
+
+.created__at{
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  align-items: center;
+}
 .card__img {
   margin-bottom: 16px;
 }
@@ -200,6 +218,9 @@ a {
   border-bottom:1px solid #999; 
   text-align: center;
   background:#f6f6f6;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
 .card__summary {
   font-size: 16px;
@@ -219,6 +240,7 @@ a {
   color: #999;
   text-align: right;
   text-decoration: underline;
+  
 }
 
 /* 詳細ページ */
@@ -317,6 +339,9 @@ a {
   font-size: 16px;
   color: #999;
   text-decoration: underline;
+  text-align: right;
+    display: block;
+
 }
 
 /* ユーザーページ */
@@ -349,6 +374,12 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+/* 削除ページ */
+.destroy
+{
+  text-align: center;
 }
 /* フッター */
 
