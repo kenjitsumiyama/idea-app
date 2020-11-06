@@ -39,11 +39,12 @@ class IdeasController < ApplicationController
     idea = Idea.find(params[:id])
     idea.destroy
 
-    if idea.destroy
-      redirect_to root_path 
-      else
-      render :index
-      end
+    # if idea.destroy
+    #   # redirect_to root_path 
+  
+    #   else
+    #   render :index
+    #   end
     end
 
 
