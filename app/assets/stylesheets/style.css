@@ -29,6 +29,7 @@ body {
 
 .select-reason-contents{
   display: flex;
+  margin-top: 30px;
 }
 
 .title{
@@ -54,6 +55,10 @@ body {
 }
 .list-pict{
   display: flex;
+  display: flex;
+  width: 30%;
+  height: 220px;
+  margin: 0 10px;
 }
 li {
   list-style: none;
@@ -225,9 +230,10 @@ a {
 .card__summary {
   font-size: 16px;
   border-bottom:1px solid #999;
-  white-space: nowrap; 
+  /* white-space: nowrap;  */
   overflow: hidden;
   text-overflow: ellipsis; 
+  height: 150px;
   /* overflow: auto;
   border-bottom:1px solid #999;
   /* word-wrap: break-word; 

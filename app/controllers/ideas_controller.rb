@@ -10,8 +10,8 @@ class IdeasController < ApplicationController
   def create
     @idea = Idea.new(idea_params)
     if @idea.save
-       redirect_to root_path
-       else
+      redirect_to root_path
+    else
       render :new
     end
   end
@@ -19,7 +19,7 @@ class IdeasController < ApplicationController
   def show
     @idea = Idea.find(params[:id])
     @comment = Comment.new
-  #  @comments = @idea.comments,includes(:user)
+    #  @comments = @idea.comments,includes(:user)
     @comments = @idea.comments.includes(:user).order(id: 'DESC')
     # @comments = Comment.all.order(id: 'DESC')
   end
@@ -29,12 +29,12 @@ class IdeasController < ApplicationController
   end
 
   def update
-     idea = Idea.find(params[:id])
-     idea.update(idea_params)
-     
-     if idea.update(idea_params)
-      flash[:notice] = "編集が完了しました"
-      redirect_to idea_path(idea.id), method: :get 
+    idea = Idea.find(params[:id])
+    idea.update(idea_params)
+
+    if idea.update(idea_params)
+      flash[:notice] = '編集が完了しました'
+      redirect_to idea_path(idea.id), method: :get
     else
       render :edit
     end
@@ -45,17 +45,16 @@ class IdeasController < ApplicationController
     idea.destroy
 
     # if idea.destroy
-    #   # redirect_to root_path 
-  
+    #   # redirect_to root_path
+
     #   else
     #   render :index
     #   end
-    end
-
+  end
 
   private
 
   def idea_params
-    params.require(:idea).permit(:title,:content).merge(user_id: current_user.id)
+    params.require(:idea).permit(:title, :content).merge(user_id: current_user.id)
   end
 end
