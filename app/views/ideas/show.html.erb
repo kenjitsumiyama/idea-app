@@ -68,7 +68,7 @@
         </p>  
           <p class="created__at"> 
           <%= time_ago_in_words(comment.created_at) %>前
-           <%=  comment.created_at.strftime("%m月%d日 %H時%M分") %> 
+           <%# <%=  comment.created_at.strftime("%m月%d日 %H時%M分") %> 
            <% if current_user.id  == comment.user_id  %>
             <%= link_to "コメント削除する",idea_comment_path(@idea.id,comment.id), method: :delete, class: :idea__btn %>
             <%end%>

@@ -7,7 +7,8 @@
     </p>
     
       <div class="created__at">
-        <%=  idea.created_at.strftime("%Y年%m月%d日 %H時%M分") %> 
+       <%= time_ago_in_words(idea.created_at) %>前 
+        <%# <%=  idea.created_at.strftime("%Y年%m月%d日 %H時%M分")  %> 
         <%= link_to  "#{idea.user.name}", user_path(idea.user.id), method: :get, class: :card__user %>
     </div>
   </div>                                  
