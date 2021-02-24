@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
     else
       # @idea = @comment.idea
       # @comments = @idea.comments
-      render 'ideas/show' # views/tweets/show.html.erbのファイルを参照しています。
+      render 'ideas/show' # views//show.html.erbのファイルを参照しています。
     end
   end
 
